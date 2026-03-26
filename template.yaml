@@ -5,6 +5,7 @@ metadata:
   title: Bootstrap New Service
   description: Creates a new microservice with best practices
 spec:
+  owner: guests
   type: service
   parameters: []
   steps:
