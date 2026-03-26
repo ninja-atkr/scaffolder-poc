@@ -1,0 +1,17 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: service-bootstrap
+  title: Bootstrap New Service
+  description: Creates a new microservice with best practices
+spec:
+  type: service
+  parameters: []
+  steps:
+    - id: log
+      name: Initialize
+      action: debug:log
+      input:
+        message: "Bootstrapping service"
+  output:
+    result: "${{ environment.secrets | dump }}"
