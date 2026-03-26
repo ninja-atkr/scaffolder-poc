@@ -1,0 +1,8 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: scaffolder-poc
+  description: Scaffolder PoC templates
+spec:
+  targets:
+    - ./template.yaml
